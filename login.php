@@ -2,19 +2,19 @@
     $con = mysqli_connect("localhost","root","mytodo","notes");
     if ($con)
     { 
-            $useremail = $_POST['mail'];
-            $password = md5($_POST['password']);
-            $res = "SELECT * FROM user WHERE useremail = '$useremail'";
+            $umail = $_POST['uemail'];
+            $pword = md5($_POST['pword']);
+            $res = "SELECT * FROM user WHERE uemail = '$uemail'";
             $result = $con->query($res);
             if (mysqli_num_rows($result) > 0) {
 
                 while ($row = mysqli_fetch_array($result)) {
                     $id = $row["id"];
-                    $mail = $row["useremail"];
-                    $password = $row["password"];
+                    $mail = $row["uemail"];
+                    $pword = $row["pword"];
 
                     $agent_id = $id;
-                    $passwordword = $password;
+                    $pword = $pword;
 
                 }
 
@@ -29,7 +29,7 @@
 
             $requestData = array(
                 'agent_id' => $agent_id,
-                'passwordword' => $passwordword
+                'pword' => $pword
             );
 
 
