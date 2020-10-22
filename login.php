@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost","root","mytodo","notes");
+    $con = mysqli_connect("localhost","chittu","Chitrakshi","notes");
     if ($con)
     { 
             $umail = $_POST['uemail'];
