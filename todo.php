@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost","root","mydoto","todo-list");
+    $con = mysqli_connect("localhost","chittu","Chitrakshi","todo-list");
     if ($con)
     {
             $title = $_POST['title'];
