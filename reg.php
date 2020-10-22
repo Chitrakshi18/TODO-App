@@ -2,22 +2,22 @@
     $con = mysqli_connect("localhost","root","mytodo","todo-list");
     if ($con)
     {
-            $name = $_POST['usernamename'];
-            $useremail = $_POST['useremail'];
-            $passwordword = md5($_POST['passwordword']);
-            $res = "INSERT INTO username(name, useremail, passwordword) VALUES ('$name','$useremail','$passwordword')";
+            $name = $_POST['uname'];
+            $uemail = $_POST['uemail'];
+            $pword = md5($_POST['pword']);
+            $res = "INSERT INTO username(name, uemail, pword) VALUES ('$name','$uemail','$pword')";
             mysqli_query($con, $res);
 
-            $res1 = "SELECT * FROM username WHERE useremail = '$useremail'";
+            $res1 = "SELECT * FROM username WHERE uemail = '$uemail'";
             $result = $con->query($res1);
             if (mysqli_num_rows($result) > 0) {
 
                 while ($row = mysqli_fetch_array($result)) {
                     $id = $row["id"];
-                    $passwordword = $row["passwordword"];
+                    $pword = $row["pword"];
 
                     $agent_id = $id;
-                    $passwordwordword = $passwordword;
+                    $pword = $pword;
 
                 }
 
@@ -26,7 +26,7 @@
             }
             $requestData = array(
                 'agent_id' => $id,
-                'passwordwordword' => $passwordwordword
+                'pword' => $pword
             );
             $responseData = array(
                 'status' => $status,
